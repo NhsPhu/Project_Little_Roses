@@ -46,6 +46,15 @@ window.addEventListener('scroll', function () {
 });
 scrollTopBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
+// Logo Click - Scroll to Top
+const logoLink = document.getElementById('logo-link');
+if (logoLink) {
+    logoLink.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+
 // Preloader
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
@@ -62,6 +71,32 @@ if (hamburger) {
     closeMenu.addEventListener('click', () => navMenu.classList.remove('active'));
     navLinksItems.forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
 }
+
+// Smooth Scroll with Section Highlight Effect
+navLinksItems.forEach(link => {
+    link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Only handle internal links (starting with #)
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                // Smooth scroll to section
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Add highlight effect
+                targetSection.classList.add('section-highlight');
+
+                // Remove highlight class after animation completes
+                setTimeout(() => {
+                    targetSection.classList.remove('section-highlight');
+                }, 1500);
+            }
+        }
+    });
+});
 
 // --- 2. PAYMENT LOGIC ---
 const BANK_ID = "970436"; const ACCOUNT_NO = "1041228495"; const ACCOUNT_NAME = "Nguyen Ho Sy Phu"; const TEMPLATE = "compact2";
@@ -137,22 +172,22 @@ const closeModal = document.querySelector('.close-modal');
 // Dữ liệu cho Dự án
 const projectContent = {
     "Xây Trường Vùng Cao": {
-        img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop",
+        img: "https://ofnews.vn/stores/news_dataimages/anhvu/052019/31/11/2837_YYi_diYn_QuY_Toyota_trao_tYng_cac_phYn_qua_cho_cac_em_hYc_sinh.jpg",
         tag: "Giáo dục",
         desc: "Dự án trọng điểm năm 2025 nhằm xóa bỏ những lớp học tạm bợ, tranh tre nứa lá tại huyện Mèo Vạc, Hà Giang. <br><br><strong>Mục tiêu:</strong><br>- Xây dựng 5 phòng học kiên cố.<br>- Trang bị bàn ghế, bảng chống lóa và đèn chiếu sáng đạt chuẩn.<br>- Xây dựng khu vệ sinh và bể chứa nước sạch cho học sinh.<br><br>Tổng kinh phí dự kiến: 1 tỷ VND. Hiện đã quyên góp được 75%."
     },
     "Trái Tim Cho Em": {
-        img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+        img: "https://vtv.gov.vn/uploads/ketnoi/422/vtvnet/2023/thang-11/trai-tim-cho-em-3.jpg",
         tag: "Y tế",
         desc: "Chương trình hỗ trợ chi phí phẫu thuật tim bẩm sinh cho trẻ em nghèo dưới 16 tuổi. <br><br>Với chi phí trung bình 50-70 triệu đồng/ca, đây là gánh nặng quá lớn với các gia đình khó khăn. Quỹ cam kết tài trợ 100% chi phí phẫu thuật và hồi sức sau mổ, giúp các em có một trái tim khỏe mạnh để đến trường."
     },
     "Bữa Ăn 0đ": {
-        img: "https://images.unsplash.com/photo-1594708767767-4f037890453c?q=80&w=800&auto=format&fit=crop",
+        img: "https://cafebiz.cafebizcdn.vn/162123310254002176/2023/1/12/photo-1-1673443725338666300654-1673446626126-1673446626292119356559-1673498005415-16734980058361059814615.jpg",
         tag: "Bác ái xã hội",
         desc: "Cung cấp các suất ăn dinh dưỡng miễn phí cho bệnh nhi ung thư và người nhà tại các bệnh viện lớn. <br><br>Mỗi suất ăn trị giá 30.000đ bao gồm đầy đủ cơm, canh, món mặn và trái cây tráng miệng, đảm bảo vệ sinh an toàn thực phẩm."
     },
     "Học Bổng": {
-        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop",
+        img: "https://images.baodantoc.vn/uploads/2021/Th%C3%A1ng_12/Ng%C3%A0y%203/TRUNG/T%E1%BA%B7ng%20qu%C3%A0/A1%20-%20OK.jpg",
         tag: "Giáo dục",
         desc: "Trao tặng học bổng 'Tiếp Sức Đến Trường' cho học sinh nghèo vượt khó học giỏi. <br><br>Mỗi suất học bổng bao gồm: Tiền mặt (2 triệu đồng), Balo, Sách giáo khoa và Dụng cụ học tập. Chúng tôi tin rằng giáo dục là con đường ngắn nhất để thoát nghèo."
     }
