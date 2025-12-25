@@ -1811,9 +1811,56 @@ footer {
     }
 }
 
+/* Mobile Performance Optimizations */
 @media (max-width: 768px) {
+
+    /* Reduce animation complexity on mobile */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.2s !important;
+    }
+
+    /* Simplify glassmorphism on mobile */
+    .glass-card-hero,
+    .glass-form {
+        backdrop-filter: blur(10px);
+    }
+
+    /* Disable expensive effects on mobile */
+    .mesh-bg {
+        display: none;
+    }
+
+    /* Optimize transforms */
+    .card-3d:hover,
+    .mission-card:hover,
+    .team-member:hover {
+        transform: none;
+    }
+
+    /* Reduce box-shadow complexity */
+    .glass-card-hero,
+    .card-3d,
+    .glass-form {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Touch optimization */
+    a,
+    button,
+    .hover-target {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .section-padding {
         padding: 5rem 5%;
+
     }
 
     .hero {
