@@ -3,16 +3,19 @@ const cursorDot = document.querySelector('[data-cursor-dot]');
 const cursorOutline = document.querySelector('[data-cursor-outline]');
 const hoverTargets = document.querySelectorAll('.hover-target, a, button, .amt-btn, input, .story-img, .card-3d');
 
-window.addEventListener('mousemove', function (e) {
-    const posX = e.clientX; const posY = e.clientY;
-    cursorDot.style.left = `${posX}px`; cursorDot.style.top = `${posY}px`;
-    cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
-});
+// Only enable custom cursor on desktop (screen width > 768px)
+if (window.innerWidth > 768) {
+    window.addEventListener('mousemove', function (e) {
+        const posX = e.clientX; const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`; cursorDot.style.top = `${posY}px`;
+        cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+    });
 
-hoverTargets.forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-});
+    hoverTargets.forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+    });
+}
 
 // Theme Toggle
 const themeBtn = document.getElementById('theme-btn');
