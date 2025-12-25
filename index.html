@@ -6,14 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Roses Foundation - Trao Yêu Thương</title>
 
+    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://img.vietqr.io">
+    <link rel="preconnect" href="https://script.google.com">
+
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font"
+        type="font/woff2" crossorigin>
+
+    <!-- Fonts with display=swap for better performance -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -35,7 +47,7 @@
     <header>
         <nav>
             <div class="logo" id="logo-link">
-                <img href="#" src="./images/Logo.png" alt="Little Roses Logo" class="logo-img"
+                <img href="#" src="./images/Logo.png" alt="Little Roses Logo" class="logo-img" width="50" height="50"
                     onerror="this.style.display='none'">
                 <i href="#" class="fas fa-rose"></i> Little Roses
             </div>
@@ -79,8 +91,8 @@
             </div>
             <div class="hero-visual reveal">
                 <div class="glass-card-hero" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop"
-                        alt="Charity" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=75&w=800&auto=format&fit=crop&fm=webp"
+                        alt="Charity" loading="eager" width="380" height="400">
                     <div class="hero-stats">
                         <div class="stat-box">
                             <h4>25+</h4>
@@ -130,8 +142,8 @@
                     <div class="team-grid">
                         <div class="team-member hover-target">
                             <div class="member-img"><img
-                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
-                                    alt="Founder" loading="lazy">
+                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=70&w=400&auto=format&fit=crop&fm=webp"
+                                    alt="Founder" loading="lazy" width="400" height="400">
                                 <div class="social-overlay"><a href="#"><i class="fab fa-linkedin"></i></a></div>
                             </div>
                             <div class="member-info">
@@ -140,8 +152,8 @@
                         </div>
                         <div class="team-member hover-target">
                             <div class="member-img"><img
-                                    src="https://media.istockphoto.com/id/2181713446/vi/anh/ch%C3%A2n-dung-phong-c%C3%A1ch-c%E1%BB%A7a-ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-tr%E1%BA%BB-trong-%C3%A1o-len-ch%E1%BB%A5p-tr%C3%AAn-n%E1%BB%81n-x%C3%A1m.jpg?s=2048x2048&w=is&k=20&c=Fq3AJnbtYF8DJISaVtkkHtO_JzuXZVKJaOSHftFZlWM="
-                                    alt="Director" loading="lazy">
+                                    src="https://media.istockphoto.com/id/2181713446/vi/anh/ch%C3%A2n-dung-phong-c%C3%A1ch-c%E1%BB%A7a-ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-tr%E1%BA%BB-trong-%C3%A1o-len-ch%E1%BB%A5p-tr%C3%AAn-n%E1%BB%81n-x%C3%A1m.jpg?s=612x612&w=is&k=20&c=Fq3AJnbtYF8DJISaVtkkHtO_JzuXZVKJaOSHftFZlWM="
+                                    alt="Director" loading="lazy" width="400" height="400">
                                 <div class="social-overlay"><a href="#"><i class="fab fa-linkedin"></i></a></div>
                             </div>
                             <div class="member-info">
@@ -150,8 +162,8 @@
                         </div>
                         <div class="team-member hover-target">
                             <div class="member-img"><img
-                                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
-                                    alt="Manager" loading="lazy">
+                                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=70&w=400&auto=format&fit=crop&fm=webp"
+                                    alt="Manager" loading="lazy" width="400" height="400">
                                 <div class="social-overlay"><a href="#"><i class="fab fa-linkedin"></i></a></div>
                             </div>
                             <div class="member-info">
@@ -160,8 +172,8 @@
                         </div>
                         <div class="team-member hover-target">
                             <div class="member-img"><img
-                                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
-                                    alt="Volunteer" loading="lazy">
+                                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=70&w=400&auto=format&fit=crop&fm=webp"
+                                    alt="Volunteer" loading="lazy" width="400" height="400">
                                 <div class="social-overlay"><a href="#"><i class="fab fa-linkedin"></i></a></div>
                             </div>
                             <div class="member-info">
@@ -179,7 +191,7 @@
             <div class="bento-grid">
                 <div class="card-3d item-1 hover-target" data-tilt>
                     <img src="https://ofnews.vn/stores/news_dataimages/anhvu/052019/31/11/2837_YYi_diYn_QuY_Toyota_trao_tYng_cac_phYn_qua_cho_cac_em_hYc_sinh.jpg"
-                        class="card-img" alt="School" loading="lazy">
+                        class="card-img" alt="School" loading="lazy" width="600" height="400">
                     <div class="card-content">
                         <span
                             style="background: var(--accent); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">Giáo
@@ -194,7 +206,7 @@
                 </div>
                 <div class="card-3d item-2 hover-target" data-tilt>
                     <img src="https://vtv.gov.vn/uploads/ketnoi/422/vtvnet/2023/thang-11/trai-tim-cho-em-3.jpg"
-                        class="card-img" alt="Medical" loading="lazy">
+                        class="card-img" alt="Medical" loading="lazy" width="600" height="400">
                     <div class="card-content">
                         <span style="background: #e74c3c; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">Y
                             tế</span>
@@ -204,14 +216,14 @@
                 </div>
                 <div class="card-3d item-3 hover-target" data-tilt>
                     <img src="https://cafebiz.cafebizcdn.vn/162123310254002176/2023/1/12/photo-1-1673443725338666300654-1673446626126-1673446626292119356559-1673498005415-16734980058361059814615.jpg"
-                        class="card-img" alt="Food" loading="lazy">
+                        class="card-img" alt="Food" loading="lazy" width="600" height="400">
                     <div class="card-content">
                         <h3>Bữa Ăn 0đ</h3>
                     </div>
                 </div>
                 <div class="card-3d item-4 hover-target" data-tilt>
                     <img src="https://images.baodantoc.vn/uploads/2021/Th%C3%A1ng_12/Ng%C3%A0y%203/TRUNG/T%E1%BA%B7ng%20qu%C3%A0/A1%20-%20OK.jpg"
-                        class="card-img" alt="Scholarship" loading="lazy">
+                        class="card-img" alt="Scholarship" loading="lazy" width="600" height="400">
                     <div class="card-content">
                         <h3>Học Bổng</h3>
                     </div>
@@ -229,8 +241,9 @@
                         </h3>
                         <div class="story-card hover-target">
                             <div class="story-img"><img
-                                    src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=600&auto=format&fit=crop"
-                                    alt="Story 1" loading="lazy"><span class="story-tag">Tiêu biểu</span></div>
+                                    src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=70&w=600&auto=format&fit=crop&fm=webp"
+                                    alt="Story 1" loading="lazy" width="600" height="400"><span class="story-tag">Tiêu
+                                    biểu</span></div>
                             <div class="story-content">
                                 <h4>Hành trình tìm lại nụ cười của bé An</h4>
                                 <p>Từ một cô bé rụt rè vì hở hàm ếch, An đã tự tin đến trường sau ca phẫu thuật...</p>
@@ -239,8 +252,8 @@
                         </div>
                         <div class="story-card hover-target">
                             <div class="story-img"><img
-                                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop"
-                                    alt="Story 2" loading="lazy"></div>
+                                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=70&w=600&auto=format&fit=crop&fm=webp"
+                                    alt="Story 2" loading="lazy" width="600" height="400"></div>
                             <div class="story-content">
                                 <h4>Lớp học "trên mây" tại Hà Giang</h4>
                                 <p>Dự án mang internet và máy tính bảng đến điểm trường cao nhất huyện Mèo Vạc.</p>
@@ -325,7 +338,7 @@
         <div class="modal-content glass-form">
             <span class="close-modal">&times;</span>
             <div class="modal-body">
-                <img id="modal-img" src="" alt="Detail">
+                <img id="modal-img" src="" alt="Detail" width="600" height="400">
                 <div class="modal-text">
                     <span class="story-tag" id="modal-tag">Tin tức</span>
                     <h3 id="modal-title">Tiêu đề</h3>
@@ -388,8 +401,9 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <script src="./js/script.js"></script>
+    <!-- Defer non-critical scripts for better performance -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" defer></script>
+    <script src="./js/script.js" defer></script>
 </body>
 
 </html>

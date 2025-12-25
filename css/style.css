@@ -119,6 +119,7 @@ img {
     height: var(--cursor-size);
     border: 1px solid var(--primary);
     transition: all 0.3s var(--transition-smooth);
+    will-change: transform, width, height;
 }
 
 body.hovering .cursor-outline {
@@ -130,6 +131,7 @@ body.hovering .cursor-outline {
 
 /* Hide custom cursor on mobile devices */
 @media (max-width: 768px) {
+
     .cursor-dot,
     .cursor-outline {
         display: none !important;
@@ -148,6 +150,7 @@ body.hovering .cursor-outline {
         radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.06), transparent 25%);
     filter: blur(60px);
     animation: bg-breathe 8s ease-in-out infinite alternate;
+    will-change: opacity;
 }
 
 @keyframes bg-breathe {
@@ -357,6 +360,7 @@ body.hovering .cursor-outline {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s var(--transition-smooth);
+    will-change: opacity, transform;
 }
 
 .reveal.active {
@@ -523,6 +527,8 @@ nav {
    ========================================================================== */
 .section-padding {
     padding: 8rem 10%;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
 }
 
 .section-title {
@@ -651,6 +657,7 @@ nav {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     background: linear-gradient(to right, var(--text-main) 30%, var(--primary));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
@@ -699,6 +706,8 @@ nav {
     transition: all 0.6s var(--transition-smooth);
     box-shadow: var(--glass-shadow);
     position: relative;
+    will-change: transform;
+    contain: layout style paint;
 }
 
 .glass-card-hero::before {
@@ -708,6 +717,7 @@ nav {
     padding: 1px;
     border-radius: inherit;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -929,6 +939,8 @@ nav {
     opacity: 0;
     transform: translateY(30px);
     animation: card-fade-in 0.8s var(--transition-smooth) forwards;
+    will-change: transform, opacity;
+    contain: layout style paint;
 }
 
 /* Staggered animation for cards */
